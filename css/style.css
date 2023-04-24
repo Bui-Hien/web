@@ -19,8 +19,249 @@
     margin: 0 auto;
 }
 
+
+root {
+    --width_header: 0;
+}
+
+.header-wraprer {
+    width: 100%;
+    --width_header: width;
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    position: fixed;
+    z-index: 3;
+}
+.header-left img {
+    height: 26px;
+    width: auto;
+}
+.home-wrap
+ter {
+    background: #ffffff;
+    height: 100%;
+    width: 100%;;
+}
+
+.color-wrapter {
+    background: #f6f7f9;
+    height: auto;
+}
+
+.content-wrapter {
+    margin: 0 auto;
+    width: 85%;
+}
+
+.header {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    height: 5em;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.header-left {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.header-left_link {
+    margin: 0;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 2em;
+}
+
+.header-center {
+    width: 50%;
+}
+
+
+.header-center_list {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.x_mobile {
+    display: none;
+}
+
+.header_about {
+    display: none;
+}
+
+.header-right_item-table {
+    display: none;
+}
+
+.header-center_item {
+    list-style: none;
+}
+
+.header-center_item:hover a {
+    color: #3f78e0;
+    text-decoration: none;
+}
+
+.header-center_link {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: black;
+    transition: color 0.5s;
+}
+
+.header-right {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-right_list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.header-right_link {
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header-languade_list {
+    padding: 2em;
+    background: aliceblue;
+    border-radius: 1em;
+}
+
+.header-right_item-languade {
+    position: relative;
+    top: 4.1em;
+    right: -1em;
+}
+
+.dropbtn {
+    position: absolute;
+    top: -4.7em;
+    right: 2.8em;
+    color: #3f78e0;
+    font-weight: 550;
+}
+
+.dropbtn:hover {
+    color: #3f78e0;
+    text-decoration: none;
+}
+
+.dropbtn::after {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #3f78e0;
+    position: relative;
+    top: 1em;
+    right: -0.2em;
+}
+
+.dropbtn::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    top: 1em;
+    right: -0.6em;
+}
+
+.dropdown-content {
+    width: 80px;
+    background: white;
+    height: 126px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.8em;
+    box-sizing: border-box;
+    padding: 13px 0;
+    position: absolute;
+    top: -2.5em;
+    left: -6.2em;
+    box-shadow: 0 0 6px 1px lightgray;
+    display: none;
+
+}
+
+.dropbtn:hover + .dropdown-content, .dropdown-content:hover {
+    display: block;
+}
+
+.dropdown-content a {
+    font-weight: 500;
+    transition: color 1s;
+    color: #343f52;
+}
+
+.dropdown-content a:hover {
+    text-decoration: none;
+    color: #3f78e0;
+
+}
+
+.dropdown-content a {
+    height: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-right_link-color {
+    padding: 0.7em 1em 0.7em 1em;
+    background: #3f78e0;
+    border-radius: 1.1em;
+    cursor: pointer;
+    color: white !important;
+    transition: box-shadow 0.5s;
+}
+
+.header-right_link-color:hover {
+    box-shadow: 3px 3px 5px 3px gainsboro;
+}
+
+.header-right_item {
+    list-style: none;
+}
+
+.header-right_item-contact {
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.header-right_item-contact:hover {
+    transform: translate(0, -0.3em);
+}
+
+
 .hone {
-    padding: 90px 15px;
+    padding: 167px 15px 90px 15px;
 }
 
 .home-top {

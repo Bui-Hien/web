@@ -10,9 +10,52 @@
     <link rel="stylesheet" type="text/css" href="css/reponsive.css">
 </head>
 <body>
-<div class="app">
-    <!--    <div class="header"></div>-->
-    <div class="color-wraper">
+<div class="app ">
+    <div id="#" class="header-wraprer" >
+        <div class="header">
+            <div class="header-left">
+                <a href="#" class="header-left_link"><img src="img/logo@2x.png" alt=""></a>
+            </div>
+            <div class="header-center " id="displayMenu">
+                <div class="x_mobile">
+                    <h2>SandBox</h2>
+                    <i class="fa-solid fa-xmark" onclick="displayMenu()"></i>
+                </div>
+                <ul class="header-center_list">
+                    <li class="header-center_item"><a href="#home" class="header-center_link">Home</a></li>
+                    <li class="header-center_item"><a href="#services" class="header-center_link">Services</a></li>
+                    <li class="header-center_item"><a href="#process" class="header-center_link">Process</a></li>
+                    <li class="header-center_item"><a href="#about" class="header-center_link">About</a></li>
+                    <li class="header-center_item"><a href="#contact" class="header-center_link">Testimonials</a></li>
+                    <li class="header-center_item"><a href="#footer" class="header-center_link">Contact</a></li>
+                </ul>
+                <div class="header_about">
+                    <p>kjadslf;jlkdsa</p>
+                    <p>kjadslf;jlkdsa</p>
+                    <p>kjadslf;jlkdsa</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <ul class="header-right_list">
+                    <li class="header-right_item header-right_item-languade">
+                        <a href="#" class="dropbtn">EN</a>
+                        <div class="dropdown-content">
+                            <a href="#">FR</a>
+                            <a href="#">JP</a>
+                            <a href="#">VN</a>
+                        </div>
+                    </li>
+                    <li class="header-right_item header-right_item-contact">
+                        <a class="header-right_link header-right_link-color">Contact</a>
+                    </li>
+                    <li class="header-right_item header-right_item-table" onclick="displayMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="home" class="color-wraper">
         <div class="width-reponsive hone">
             <div class="home-top">
                 <h2 id="home-content-scale-title">Creative. Smart. Awesome.</h2>
@@ -20,11 +63,11 @@
                     believes in the power of creative ideas.</p>
             </div>
             <div class="home-bottom">
-                <img src="img/i8.png">
+                <img src="img/i8.png" alt="">
             </div>
         </div>
     </div>
-    <div class="noneColor-wraper">
+    <div id="services" class="noneColor-wraper">
         <div class="width-reponsive services">
             <div class="services-top">
                 <div class="services-top_left">
@@ -107,7 +150,7 @@
             </div>
         </div>
     </div>
-    <div class="color-wraper">
+    <div id ="process" class="color-wraper">
         <div class="width-reponsive process">
             <div class="process-top  ">
                 <div class="process-top-left">
@@ -176,7 +219,7 @@
             </div>
         </div>
     </div>
-    <div class="noneColor-wraper">
+    <div id="about" class="noneColor-wraper">
         <div class="width-reponsive about">
             <div class="about-left">
                 <h4>- MEET THE TEAM</h4>
@@ -189,7 +232,7 @@
             <div class="about-right">
                 <div class="list-about-right">
                     <div class="about-right-item">
-                        <img src="img/i2.png" class="avatar" width="200" height="200">
+                        <img src="img/i2.png" class="avatar" width="200px" height="200px" alt="">
                         <div class="content">
                             <h4>Cory Zamora1</h4>
                             <h5>Marketing Specialist</h5>
@@ -262,7 +305,7 @@
             </div>
         </div>
     </div>
-    <div class="color-wraper">
+    <div id="testimonials" class="color-wraper">
         <div class="width-reponsive testimonials">
             <div class="testimonials-top">
                 <div class="form-list">
@@ -327,7 +370,7 @@
             </div>
         </div>
     </div>
-    <div class="noneColor-wraper">
+    <div id="contact" class="noneColor-wraper">
         <div class="width-reponsive contact">
             <div class="contact-content-left">
                 <img src="img/i5.png" alt="">
@@ -359,7 +402,7 @@
             </div>
         </div>
     </div>
-    <div class="footer-color">
+    <div id="footer" class="footer-color">
         <div class="footer-wraper  size_reposive">
             <div class="footer-content">
                 <div class="footer-content-item">
