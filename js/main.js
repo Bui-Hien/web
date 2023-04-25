@@ -57,7 +57,6 @@ function hien2() {
 //lây kich thươc cua cua so dang mo
 var w = window.innerWidth;
 var h = window.innerHeight;
-console.log(w);
 window.addEventListener('resize', function () {
     w = window.innerWidth;
     h = window.innerHeight;
@@ -98,14 +97,27 @@ list_about_slider.addEventListener('mousedown', (event) => {
         if (moveX >= widthItem_about) {
             list_about_slider.scrollLeft -= (widthItem_about * 2);
         } else {
+
             list_about_slider.scrollLeft += (widthItem_about * 2);
+
         }
+
     }
-});
+
+
+})
+;
+
+function currentSlide(n) {
+
+}
+
 
 var testimonialsWrap = document.querySelector('div.testimonials-left-content-wrap');
 var testimonials_left_content = document.querySelector('div.testimonials-left-content');
 const widthItem = testimonialsWrap.offsetWidth / 2;
+var indexTestimonials = 0;
+var dottestimonials = document.getElementsByClassName('dottestimonials');
 testimonialsWrap.addEventListener('mousedown', (event) => {
     //KHI MUOSEDOWN THI CURSOR CHUYEN KIEU
     testimonialsWrap.style.cursor = "grabbing";
@@ -126,24 +138,10 @@ testimonialsWrap.addEventListener('mousedown', (event) => {
     let moveX;
 
     function onMouseMove(event) {
-        // Tính toán khoảng cách di chuyển của chuột so với vị trí khởi đầu
         moveX = event.pageX - startX;
         testimonialsWrap.scrollLeft += moveX;
-        // Di chuyển khung cuộn theo khoảng cách tính
     }
 
-    // var dottestimonials = document.getElementsByClassName("p.dottestimonials");
-    // console.log("fadjlka;" + dottestimonials)
-    // for (j = 0; i < dottestimonials.length; i++) {
-    //     dottestimonials[j].style.background = "#d4d7dd";
-    //     dottestimonials[j].style.transform = "scale(1)";
-    // }
-    // if (moveX < 0 && mark < 3) dottestimonials[mark + 1].style.background = "#717171";
-    // dottestimonials[mark + 1].style.transform = "scale(1.2)";
-    // if (moveX > 0 && mark > 0) {
-    //     dottestimonials[mark - 1].style.background = "#717171";
-    //     dottestimonials[mark - 1].style.transform = "scale(1.2)";
-    // }
 
     function onMouseUp() {
         testimonialsWrap.removeEventListener('mousemove', onMouseMove);
@@ -151,11 +149,34 @@ testimonialsWrap.addEventListener('mousedown', (event) => {
         testimonialsWrap.style.cursor = "grab";
         if (moveX >= widthItem) {
             testimonialsWrap.scrollLeft -= widthItem * 2;
+            if (indexTestimonials >= 2) {
+                indexTestimonials = 2;
+            } else {
+                indexTestimonials += 1;
+
+            }
+
         }
         if (moveX < widthItem) {
             testimonialsWrap.scrollLeft += widthItem * 2;
+            if (indexTestimonials <= 0) {
+                indexTestimonials = 0;
+            } else {
+                indexTestimonials -= 1;
+            }
         }
+        for (i = 0; i < dottestimonials.length; i++) {
+            dottestimonials[i].style.background = "#d4d7dd";
+            dottestimonials[i].style.transform = "scale(1)";
+        }
+        console.log(indexTestimonials + "dsaklfdj")
+        dottestimonials[indexTestimonials].transition = "transform 0.5s, background 0.5s";
+        dottestimonials[indexTestimonials].transform = "scale(1.2)";
+        dottestimonials[indexTestimonials].background = "#717171";
+
     }
+
+
 });
 
 
@@ -172,47 +193,47 @@ dragLink.addEventListener('dragend', function () {
 
 //hien menu table, mebile
 function displayMenu() {
-    if(w<1024){
+    if (w < 1024) {
 
     }
-        var element = document.getElementsByClassName("header-center");
-        if (element[0].classList.contains("header-center_block")) {
-            const element = document.querySelectorAll('.header-center_block')[0];
+    var element = document.getElementsByClassName("header-center");
+    if (element[0].classList.contains("header-center_block")) {
+        const element = document.querySelectorAll('.header-center_block')[0];
 
-            // Gán tên animation và thời gian hoàn thành của animation cho phần tử
-            element.style.animationName = 'example';
-            element.style.animationDuration = '1s';
+        // Gán tên animation và thời gian hoàn thành của animation cho phần tử
+        element.style.animationName = 'example';
+        element.style.animationDuration = '1s';
 
-            // Định nghĩa keyframes cho animation
-            const styleSheet = document.createElement('style');
-            styleSheet.innerHTML = `
+        // Định nghĩa keyframes cho animation
+        const styleSheet = document.createElement('style');
+        styleSheet.innerHTML = `
       @keyframes example {
         from {margin-left: 0;}
         to {margin-left: -100%;}
       }
     `;
-            document.head.appendChild(styleSheet);
-            setTimeout(() => {
-                element.classList.remove("header-center_block");
-            }, 1000);
+        document.head.appendChild(styleSheet);
+        setTimeout(() => {
+            element.classList.remove("header-center_block");
+        }, 1000);
 
 
-        } else {
-            element[0].classList.add("header-center_block");
-            // Đặt các thuộc tính animation cho phần tử
-            element[0].style.animationName = 'example1';
-            element[0].style.animationDuration = '1s';
+    } else {
+        element[0].classList.add("header-center_block");
+        // Đặt các thuộc tính animation cho phần tử
+        element[0].style.animationName = 'example1';
+        element[0].style.animationDuration = '1s';
 
-            // Định nghĩa keyframes cho animation
-            const styleSheet = document.createElement('style');
-            styleSheet.innerHTML = `
+        // Định nghĩa keyframes cho animation
+        const styleSheet = document.createElement('style');
+        styleSheet.innerHTML = `
           @keyframes example1 {
             from {margin-left: -100%;}
             to {margin-left: 0;}
           }
         `;
-            document.head.appendChild(styleSheet);
-        }
+        document.head.appendChild(styleSheet);
+    }
 }
 
 function displayMenuTB() {
@@ -252,12 +273,12 @@ var headerConten = document.querySelector('.header');
 
 function scrollFunction() {
     if (document.body.scrollTop > 74 || document.documentElement.scrollTop > 74) {
-        headerWraper.style.background = "#FEFEFE";
+        headerWraper.style.background = "#ffffff";
         headerWraper.style.top = "-74px";
         headerWraper.style.transition = "top 0.5s";
         headerWraper.style.top = "0";
         headerWraper.style.position = "fixed";
-        headerConten.style.background = "#FEFEFE";
+        headerConten.style.background = "#ffffff";
 
     } else {
         headerWraper.style.transition = "top 0.5s";
@@ -268,3 +289,4 @@ function scrollFunction() {
     }
 
 }
+

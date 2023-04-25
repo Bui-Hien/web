@@ -5,6 +5,7 @@ html{
 .app {
     width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .color-wraper {
@@ -13,7 +14,7 @@ html{
 }
 
 .noneColor-wraper {
-    background-color: #fefefe;
+    background-color:#fefefe;
     width: 100%;
 }
 
