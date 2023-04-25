@@ -213,3 +213,8 @@ function displayMenu() {
         document.head.appendChild(styleSheet);
     }
 }
+function displayMenuTB(){
+    if(w<1024){
+        displayMenu();
+    }
+}
