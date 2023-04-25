@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 .app {
     width: 100%;
     box-sizing: border-box;
@@ -30,8 +34,7 @@ root {
     height: 5em;
     display: flex;
     justify-content: center;
-    background: #ffffff;
-    position: fixed;
+    background: #f6f7f9;
     z-index: 3;
 }
 .header-left img {
@@ -61,7 +64,7 @@ ter {
     flex-direction: row;
     height: 5em;
     box-sizing: border-box;
-    background: #ffffff;
+    background: #f6f7f9;
 }
 
 .header-left {
@@ -120,6 +123,8 @@ ter {
     font-size: 1.2em;
     color: black;
     transition: color 0.5s;
+    font-weight: 500;
+
 }
 
 .header-right {
@@ -245,6 +250,7 @@ ter {
 
 .header-right_link-color:hover {
     box-shadow: 3px 3px 5px 3px gainsboro;
+    text-decoration: none;
 }
 
 .header-right_item {
@@ -261,7 +267,7 @@ ter {
 
 
 .hone {
-    padding: 167px 15px 90px 15px;
+    padding: 90px 15px 90px 15px;
 }
 
 .home-top {
@@ -1013,3 +1019,9 @@ ter {
     transform: translate(0, -3px);
     box-shadow: 0 0 8px 0 #3f78e0;
 }
+/*đổi mầu khi trượt tới nội dung của nó*/
+/* Màu khi menu được đánh dấu */
+.header-center_item.active a {
+    color: #3f78e0;
+}
+
