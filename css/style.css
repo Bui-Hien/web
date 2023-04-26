@@ -1,11 +1,11 @@
-html{
+html {
     scroll-behavior: smooth;
 }
 
 .app {
     width: 100%;
     box-sizing: border-box;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
 }
 
 .color-wraper {
@@ -14,7 +14,7 @@ html{
 }
 
 .noneColor-wraper {
-    background-color:#fefefe;
+    background-color: #fefefe;
     width: 100%;
 }
 
@@ -38,10 +38,12 @@ root {
     background: #f6f7f9;
     z-index: 3;
 }
+
 .header-left img {
     height: 26px;
     width: auto;
 }
+
 .home-wrap
 ter {
     background: #ffffff;
@@ -151,6 +153,7 @@ ter {
 .dropdown-content {
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 
@@ -543,6 +546,13 @@ ter {
     left: -0.5em;
 }
 
+.process-bottom-left-title:hover::before {
+    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid transparent;
+    border-top: 0.3em solid transparent;
+    border-bottom: 0.3em solid #3f78e0;
+    top: -12px;
+}
 
 .about {
     display: flex;
@@ -1020,9 +1030,35 @@ ter {
     transform: translate(0, -3px);
     box-shadow: 0 0 8px 0 #3f78e0;
 }
+
 /*đổi mầu khi trượt tới nội dung của nó*/
 /* Màu khi menu được đánh dấu */
 .header-center_item.active a {
     color: #3f78e0;
 }
 
+#scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#scroll-top-child {
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    background-color: #fefefe;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #001a2e;
+
+}
+#scroll-top-child i{
+    color: #d8dadd;
+}

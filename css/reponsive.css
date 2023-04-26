@@ -689,6 +689,10 @@
     .header_about-icon a i:hover {
         transform: translate(0, -5px);
     }
+
+    #scroll-top {
+        display: none!important;
+    }
 }
 
 
