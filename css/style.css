@@ -360,8 +360,7 @@ ter {
 
 .divservices-top_right-chartchild {
     height: 100%;
-    width: 80%;
-    background: red;
+    width: 0;
     border-radius: 5em;
 }
 
@@ -1061,4 +1060,12 @@ ter {
 }
 #scroll-top-child i{
     color: #d8dadd;
+}
+
+
+.percentage-container p {
+    background-color: green;
+    color: white;
+    text-align: center;
+    width: 100%;
 }

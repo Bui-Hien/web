@@ -4,6 +4,32 @@ var loadText = document.getElementById('home-content-scale-text');
 let timerId;
 
 window.addEventListener("load", () => {
+    const pElements = document.querySelectorAll('.percentage-container');
+    let count = 0;
+    let intervalId = setInterval(incrementPercentage, 20);
+    let valueChartChild = ['100', '80', '85', '90'];
+
+    function incrementPercentage() {
+        if (count >= 100) {
+            clearInterval(intervalId);
+        } else {
+            count++;
+            pElements.forEach((pElement, index) => {
+                let value = Math.round((count / 100) * valueChartChild[index]);
+                pElement.textContent = value + '%';
+            });
+        }
+    }
+
+
+    let chartChild = document.getElementsByClassName('divservices-top_right-chartchild');
+    let widthChartChild = ['100%', '80%', '85%', '90%']
+    let colorChartChild = ['#3f78e0', '#45c4a0', '#FAB758', '#F78B77']
+    for (let i = 0; i < chartChild.length; i++) {
+        chartChild[i].style.transition = "width 2s ease-out";
+        chartChild[i].style.width = widthChartChild[i];
+        chartChild[i].style.backgroundColor = colorChartChild[i];
+    }
     setTimeout(() => {
         loadText.style.transition = "scale 1s ease-out";
         loadText.style.scale = "1.5";
@@ -19,7 +45,7 @@ window.addEventListener("load", () => {
 //proces ẩn hiện
 function hien() {
     let displayNone = document.getElementsByClassName("process-bottom-left-content");
-    for (i = 0; i < displayNone.length; i++) {
+    for (let i = 0; i < displayNone.length; i++) {
         if (displayNone[i].classList.contains("hien")) {
             if (i != 0) displayNone[i].classList.remove("hien");
         }
@@ -264,14 +290,29 @@ divs.forEach(div => {
 });
 
 
-window.onscroll = function () {
-    scrollFunction()
-};
-var headerWraper = document.querySelector('.header-wraprer');
-var headerConten = document.querySelector('.header');
-var dropdownContent = document.querySelector('.dropdown-content');
+let calcScrollValue = () => {
+    let scrollProgress = document.getElementById("scroll-top");
+    let progressValue = document.getElementById("scroll-top-child");
+    let pos = document.documentElement.scrollTop;
+    let calcHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+    let scrollValue = Math.round((pos * 100) / calcHeight);
+    if (pos > 100) {
+        scrollProgress.style.display = "grid";
+    } else {
+        scrollProgress.style.display = "none";
+    }
+    scrollProgress.addEventListener("click", () => {
+        document.documentElement.scrollTop = 0;
+    });
+    scrollProgress.style.background = `conic-gradient(#497ee0 ${scrollValue}%, #d8dadd ${scrollValue}%)`;
 
-function scrollFunction() {
+
+//    header
+    let headerWraper = document.querySelector('.header-wraprer');
+    let headerConten = document.querySelector('.header');
+    let dropdownContent = document.querySelector('.dropdown-content');
     if (document.body.scrollTop > 74 || document.documentElement.scrollTop > 74) {
         headerWraper.style.background = "#ffffff";
         headerWraper.style.top = "-74px";
@@ -287,27 +328,6 @@ function scrollFunction() {
         headerWraper.style.background = "#f6f7f9";
         headerConten.style.background = "#f6f7f9";
     }
-
-}
-
-
-let calcScrollValue = () => {
-  let scrollProgress = document.getElementById("scroll-top");
-  let progressValue = document.getElementById("scroll-top-child");
-  let pos = document.documentElement.scrollTop;
-  let calcHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  let scrollValue = Math.round((pos * 100) / calcHeight);
-  if (pos > 100) {
-    scrollProgress.style.display = "grid";
-  } else {
-    scrollProgress.style.display = "none";
-  }
-  scrollProgress.addEventListener("click", () => {
-    document.documentElement.scrollTop = 0;
-  });
-  scrollProgress.style.background = `conic-gradient(#497ee0 ${scrollValue}%, #d8dadd ${scrollValue}%)`;
 };
 
 window.onscroll = calcScrollValue;
